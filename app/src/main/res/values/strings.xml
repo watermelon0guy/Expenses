@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Expenses</string>
+    <string name="add_expense">Add expense</string>
+    <string name="category_food">Food</string>
+    <string name="category_transportation">Transportation</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_utilities">Utilities</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_other">Other</string>
+    <string name="expense">Expense</string>
+</resources>
