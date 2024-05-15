@@ -81,8 +81,7 @@ fun CategoryMenu(selectedCategory: ExpenseCategory, onCategorySelected: (Expense
         }
         DropdownMenu(
             expanded = expanded,
-            onDismissRequest = { expanded = false },
-            modifier = Modifier.fillMaxWidth()
+            onDismissRequest = { expanded = false }
         ) {
             categories.forEach { category ->
                 DropdownMenuItem(
