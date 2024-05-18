@@ -1,11 +1,16 @@
 package com.dream_team.expenses.data
 
 import androidx.annotation.StringRes
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.dream_team.expenses.R
+import java.time.LocalDateTime
 
+@Entity(tableName = "expenses")
 data class Expense(
     val value: Double,
-    val category: ExpenseCategory
+    val category: ExpenseCategory,
+    @PrimaryKey val dateTime: LocalDateTime
 )
 
 

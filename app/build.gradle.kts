@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -70,5 +71,12 @@ dependencies {
     implementation(libs.androidx.room.gradle.plugin)
     annotationProcessor(libs.androidx.room.compiler)
     implementation(libs.androidx.room.paging)
+    implementation(libs.androidx.room.ktx)
+
+
+
+    // To use Kotlin Symbol Processing (KSP)
+    ksp(libs.androidx.room.compiler)
+
 
 }
