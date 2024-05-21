@@ -32,10 +32,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dream_team.expenses.R
 import com.dream_team.expenses.data.ExpenseCategory
-import com.dream_team.expenses.view_models.ExpenseViewModel
+import com.dream_team.expenses.view_models.AddExpenseViewModel
 
 @Composable
-fun AddExpenseScreen(viewModel: ExpenseViewModel) {
+fun AddExpenseScreen(viewModel: AddExpenseViewModel) {
     val expenseValue by viewModel.expenseValue.collectAsState()
     val selectedCategory by viewModel.selectedCategory.collectAsState()
 

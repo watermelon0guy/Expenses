@@ -8,4 +8,5 @@
     <string name="category_shopping">Shopping</string>
     <string name="category_other">Other</string>
     <string name="expense">Expense</string>
+    <string name="all_expenses">All expenses</string>
 </resources>
