@@ -58,6 +58,7 @@ fun ExpenseItem(expense: Expense) {
         ) {
             Text(text = stringResource(id = expense.category.categoryNameResId))
             Text(text = "${expense.value}")
+            Text(text = "${expense.dateTime}")
         }
     }
 }
