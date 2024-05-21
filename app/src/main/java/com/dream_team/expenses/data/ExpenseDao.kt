@@ -22,6 +22,6 @@ interface ExpenseDao {
     @Query("SELECT * FROM expenses WHERE dateTime = :dateTime")
     suspend fun getExpenseByDateTime(dateTime: LocalDateTime): Expense?
 
-    @Query("SELECT * FROM expenses")
+    @Query("SELECT * FROM expenses ORDER BY dateTime DESC")
     fun getAllExpenses(): Flow<List<Expense>>
 }

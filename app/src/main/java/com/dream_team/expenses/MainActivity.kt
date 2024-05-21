@@ -17,12 +17,12 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
-        val addExpenseViewModel : ExpenseViewModel by viewModels()
-        val allExpensesViewModel : AllExpensesViewModel by viewModels()
+        val addExpenseViewModel: ExpenseViewModel by viewModels()
+        val allExpensesViewModel: AllExpensesViewModel by viewModels()
         setContent {
             ExpensesTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    // AddExpenseScreen(addExpenseViewModel)
+//                    AddExpenseScreen(addExpenseViewModel)
                     AllExpensesScreen(viewModel = allExpensesViewModel)
                 }
             }

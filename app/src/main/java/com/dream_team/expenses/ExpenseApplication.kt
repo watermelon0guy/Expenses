@@ -12,7 +12,6 @@ class ExpenseApplication :Application() {
         lateinit var repository: ExpensesRepositoryDB
     }
 
-
     override fun onCreate() {
         super.onCreate()
         // Initialize the database here, when the Application context is ready.

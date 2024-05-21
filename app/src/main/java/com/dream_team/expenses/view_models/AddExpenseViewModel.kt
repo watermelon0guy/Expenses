@@ -37,7 +37,6 @@ class ExpenseViewModel : ViewModel() {
         Log.d("Expense", "Добавлен расход: ${expense.value}, Категория: ${expense.category}")
         viewModelScope.launch {
             repository.insert(expense)
-            repository.getAllExpenses().collect { value -> Log.d("DB", "$value") }
         }
         // Очищаем поля после добавления расхода
         _expenseValue.value = 0.0
