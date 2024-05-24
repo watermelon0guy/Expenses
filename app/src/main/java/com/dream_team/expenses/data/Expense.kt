@@ -13,12 +13,14 @@ data class Expense(
     @PrimaryKey val dateTime: LocalDateTime
 )
 
-
-enum class ExpenseCategory(@StringRes val categoryNameResId: Int) {
-    FOOD(R.string.category_food),
-    TRANSPORTATION(R.string.category_transportation),
-    ENTERTAINMENT(R.string.category_entertainment),
-    UTILITIES(R.string.category_utilities),
-    SHOPPING(R.string.category_shopping),
-    OTHER(R.string.category_other);
+enum class ExpenseCategory(
+    @StringRes val categoryNameResId: Int,
+    val imageResId: Int
+) {
+    FOOD(R.string.category_food, R.drawable.food),
+    TRANSPORTATION(R.string.category_transportation, R.drawable.transportation),
+    ENTERTAINMENT(R.string.category_entertainment, R.drawable.entertaiment),
+    UTILITIES(R.string.category_utilities, R.drawable.utilities),
+    SHOPPING(R.string.category_shopping, R.drawable.shopping),
+    OTHER(R.string.category_other, R.drawable.other);
 }
