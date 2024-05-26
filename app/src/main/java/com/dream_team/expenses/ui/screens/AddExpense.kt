@@ -65,15 +65,6 @@ fun AddExpenseScreen(viewModel: AddExpenseViewModel) {
         ) {
             Text(stringResource(R.string.add_expense), fontSize = 18.sp)
         }
-//        TODO("Снести кнопку ниже")
-
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(
-            onClick = { viewModel.debugPrintAllDB() },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("PRINT ALL", fontSize = 18.sp)
-        }
     }
 }
 
