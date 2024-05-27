@@ -22,8 +22,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             ExpensesTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-//                    AddExpenseScreen(addExpenseViewModel)
-//                    AllExpensesScreen(viewModel = allExpensesViewModel)
                     ScreenManager(allExpensesViewModel, addExpenseViewModel)
                 }
             }
