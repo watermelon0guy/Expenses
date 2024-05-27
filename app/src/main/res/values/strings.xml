@@ -9,4 +9,5 @@
     <string name="category_other">Other</string>
     <string name="expense">Expense</string>
     <string name="all_expenses">All expenses</string>
+    <string name="expense_details">Details</string>
 </resources>

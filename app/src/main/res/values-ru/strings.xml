@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Расходы</string>
+    <string name="add_expense">Добавить расход</string>
+    <string name="category_food">Еда</string>
+    <string name="category_transportation">Транспорт</string>
+    <string name="category_entertainment">Развлечения</string>
+    <string name="category_utilities">ЖКХ</string>
+    <string name="category_shopping">Магазины</string>
+    <string name="category_other">Разное</string>
+    <string name="expense">Расход</string>
+    <string name="all_expenses">Все расходы</string>
+    <string name="expense_details">Подробности</string>
 </resources>
