@@ -30,10 +30,12 @@ enum class Screens {
     GRAPHS
 }
 
-
 @Composable
-fun ScreenManager(allExpensesViewModel: AllExpensesViewModel, addExpensesViewModel: AddExpenseViewModel) {
-    var currentScreen by remember { mutableStateOf(Screens.ALL_EXPENSES) }
+fun ScreenManager(
+    allExpensesViewModel: AllExpensesViewModel,
+    addExpensesViewModel: AddExpenseViewModel
+) {
+    var currentScreen by remember { mutableStateOf(Screens.ADD_EXPENSE) }
 
     Scaffold(
         bottomBar = {

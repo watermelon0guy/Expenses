@@ -1,7 +1,6 @@
 package com.dream_team.expenses.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,13 +8,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -30,7 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.dream_team.expenses.R
 import com.dream_team.expenses.data.ExpenseCategory
 import com.dream_team.expenses.view_models.AddExpenseViewModel
@@ -58,7 +53,9 @@ fun AddExpenseScreen(viewModel: AddExpenseViewModel) {
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(16.dp))
-        CategoryMenu(selectedCategory = selectedCategory, onCategorySelected = { viewModel.setSelectedCategory(it) })
+        CategoryMenu(
+            selectedCategory = selectedCategory,
+            onCategorySelected = { viewModel.setSelectedCategory(it) })
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = { viewModel.addExpense() },
@@ -77,8 +74,15 @@ fun CategoryMenu(selectedCategory: ExpenseCategory, onCategorySelected: (Expense
     var expanded by remember { mutableStateOf(false) }
 
     Button(modifier = Modifier.fillMaxWidth(), onClick = { expanded = true }) {
-        Icon(imageVector = selectedCategory.imageResId, contentDescription = null)
-        Text(text = stringResource(id = selectedCategory.categoryNameResId), style = MaterialTheme.typography.labelLarge)
+        Icon(
+            modifier = Modifier.padding(horizontal = 5.dp),
+            imageVector = selectedCategory.imageResId,
+            contentDescription = null
+        )
+        Text(
+            text = stringResource(id = selectedCategory.categoryNameResId),
+            style = MaterialTheme.typography.labelLarge
+        )
         DropdownMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false }
@@ -86,7 +90,12 @@ fun CategoryMenu(selectedCategory: ExpenseCategory, onCategorySelected: (Expense
             categories.forEach { category ->
                 DropdownMenuItem(
                     text = { Text(stringResource(id = category.categoryNameResId)) },
-                    leadingIcon = { Icon(imageVector = category.imageResId, contentDescription = null) },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = category.imageResId,
+                            contentDescription = null
+                        )
+                    },
                     onClick = {
                         onCategorySelected(category)
                         expanded = false
