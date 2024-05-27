@@ -16,6 +16,7 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -63,7 +64,7 @@ fun AddExpenseScreen(viewModel: AddExpenseViewModel) {
             onClick = { viewModel.addExpense() },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(stringResource(R.string.add_expense), fontSize = 18.sp)
+            Text(stringResource(R.string.add_expense), style = MaterialTheme.typography.labelLarge)
         }
     }
 }
@@ -75,10 +76,9 @@ fun CategoryMenu(selectedCategory: ExpenseCategory, onCategorySelected: (Expense
 
     var expanded by remember { mutableStateOf(false) }
 
-    Box(modifier = Modifier.fillMaxWidth()) {
-        IconButton(onClick = { expanded = true }) {
-            Icon(Icons.Filled.Menu, contentDescription = null)
-        }
+    Button(modifier = Modifier.fillMaxWidth(), onClick = { expanded = true }) {
+        Icon(imageVector = selectedCategory.imageResId, contentDescription = null)
+        Text(text = stringResource(id = selectedCategory.categoryNameResId), style = MaterialTheme.typography.labelLarge)
         DropdownMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false }
@@ -86,6 +86,7 @@ fun CategoryMenu(selectedCategory: ExpenseCategory, onCategorySelected: (Expense
             categories.forEach { category ->
                 DropdownMenuItem(
                     text = { Text(stringResource(id = category.categoryNameResId)) },
+                    leadingIcon = { Icon(imageVector = category.imageResId, contentDescription = null) },
                     onClick = {
                         onCategorySelected(category)
                         expanded = false
