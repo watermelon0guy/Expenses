@@ -1,5 +1,6 @@
 package com.dream_team.expenses.view_models
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dream_team.expenses.ExpenseApplication
@@ -20,6 +21,14 @@ class AllExpensesViewModel : ViewModel() {
             repository.getAllExpenses().collect { expenseList ->
                 _expenses.value = expenseList
             }
+        }
+    }
+
+    fun deleteExpense(expense: Expense){
+
+        Log.d("Expense", "Расход удалён")
+        viewModelScope.launch {
+            repository.delete(expense)
         }
     }
 }

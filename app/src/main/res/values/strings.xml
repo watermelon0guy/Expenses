@@ -10,4 +10,5 @@
     <string name="expense">Expense</string>
     <string name="all_expenses">All expenses</string>
     <string name="expense_details">Details</string>
+    <string name="delete_expense">Delete expense</string>
 </resources>

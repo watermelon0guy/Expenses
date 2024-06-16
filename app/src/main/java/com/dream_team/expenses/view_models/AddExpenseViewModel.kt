@@ -40,10 +40,4 @@ class AddExpenseViewModel : ViewModel() {
         _selectedCategory.value = ExpenseCategory.FOOD
     }
 
-//    TODO("Снести функцию ниже")
-    fun debugPrintAllDB() {
-        viewModelScope.launch {
-            repository.getAllExpenses().collect { value -> Log.d("DB", "${value.toString()}") }
-        }
-    }
 }

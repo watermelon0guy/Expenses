@@ -62,7 +62,7 @@ fun AllExpensesScreen(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(expenses) { expense ->
-                ExpenseItem(expense)
+                ExpenseItem(expense, { viewModel.deleteExpense(expense) })
             }
         }
     }
@@ -72,6 +72,7 @@ fun AllExpensesScreen(
 @Composable
 fun ExpenseItem(
     expense: Expense,
+    onDelete: () -> Unit
 ) {
     val shape = RoundedCornerShape(10.dp)
     var expanded by remember { mutableStateOf(false) }
@@ -84,7 +85,7 @@ fun ExpenseItem(
             .combinedClickable(
                 onClickLabel = stringResource(id = R.string.expense_details),
                 onClick = { expanded = !expanded },
-                onLongClick = { }
+                onLongClick = { onDelete() }
             )
     ) {
         Row(

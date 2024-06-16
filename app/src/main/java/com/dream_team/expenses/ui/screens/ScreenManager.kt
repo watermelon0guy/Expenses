@@ -58,6 +58,7 @@ fun ScreenManager(
                 ) {
                     Text(stringResource(id = R.string.add_expense))
                 }
+
             }
         }
     ) { innerPadding ->
